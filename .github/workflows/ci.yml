@@ -3,6 +3,8 @@ name: CI
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'helm/values.yaml'
   pull_request:
     branches: [main]
 
