@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: abdo2400/gitops-demo
-  tag: "ae16c9c17a70bbc87adf0712661808f633a889c9"
+  tag: "760ebbba8f5206fee796a2b5d4764af818aaceef"
   pullPolicy: IfNotPresent
 
 service:
