@@ -21,10 +21,26 @@ jobs:
 
       - run: npm install
       - run: npm test
+  
+  scan-code:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Scan dependencies for vulnerabilities
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: fs
+          scan-ref: .
+          severity: CRITICAL,HIGH
+          exit-code: 1
+          ignore-unfixed: true
+  
 
   build:
     runs-on: ubuntu-latest
-    needs: test
+    needs: scan-code
     if: github.ref == 'refs/heads/main'
 
     steps:
@@ -45,9 +61,27 @@ jobs:
             ${{ secrets.DOCKERHUB_USERNAME }}/gitops-demo:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/gitops-demo:${{ github.sha }}
 
-  update-manifest:
+
+  scan-image:
     runs-on: ubuntu-latest
     needs: build
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Scan Docker image for vulnerabilities
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: image
+          image-ref: ${{ secrets.DOCKERHUB_USERNAME }}/gitops-demo:${{ github.sha }}
+          severity: CRITICAL
+          exit-code: 1
+          ignore-unfixed: true
+
+
+  update-manifest:
+    runs-on: ubuntu-latest
+    needs: scan-image
     if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
