@@ -1,15 +1,18 @@
 replicaCount: 2
 
 image:
-  repository: abdo2400/gitops-demo
-  tag: "89ae6d160600178a03ec1bdd4b87f70a739a7ad9"
+  repository: YOUR_DOCKERHUB_USERNAME/gitops-demo
+  tag: "latest"
   pullPolicy: IfNotPresent
 
 service:
-  type: NodePort
+  type: ClusterIP
   port: 80
   targetPort: 3000
-  nodePort: 30080
+
+ingress:
+  enabled: true
+  host: api.gitops-demo.local
 
 livenessProbe:
   path: /health
