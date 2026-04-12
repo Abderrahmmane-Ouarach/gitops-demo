@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/health", (req, res) => {
-  res.json({ status: "ok", version: "7.0" });
+  res.json({ status: "ok", version: "7.1" });
 });
 
 app.get("/tasks", (req, res) => {
