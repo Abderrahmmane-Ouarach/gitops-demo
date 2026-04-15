@@ -1,5 +1,6 @@
 const express = require("express");
 const promClient = require("prom-client");
+const { version } = require("react");
 
 const app = express();
 app.use(express.json());
@@ -45,7 +46,7 @@ app.get("/", (req, res) => {
 
 
 app.get("/health", (req, res) => {
-  res.json({ status: "ok" });
+  res.json({ status: "ok",version: "10.0.0" });
 });
 
 app.get("/metrics", async (req, res) => {
