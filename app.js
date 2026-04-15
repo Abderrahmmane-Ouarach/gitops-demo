@@ -38,6 +38,12 @@ app.use((req, res, next) => {
 
 let tasks = [];
 
+
+app.get("/", (req, res) => {
+  res.send("Task Manager API is running 🚀");
+});
+
+
 app.get("/health", (req, res) => {
   res.json({ status: "ok" });
 });
