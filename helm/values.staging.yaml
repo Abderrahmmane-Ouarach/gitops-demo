@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  tag: "latest"
+  tag: "563fe44143489a391f43f9d12c9080ed128d9c98"
 
 ingress:
   host: staging.gitops-demo.local
