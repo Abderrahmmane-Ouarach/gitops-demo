@@ -1,0 +1,15 @@
+replicaCount: 2
+
+image:
+  tag: "latest"
+
+ingress:
+  host: api.gitops-demo.local
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi

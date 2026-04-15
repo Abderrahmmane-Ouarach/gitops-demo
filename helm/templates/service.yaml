@@ -1,13 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: "{{ .Chart.Name }}-svc"
+  name: "{{ .Chart.Name }}-{{ .Values.env }}-svc"
   labels:
     app: {{ .Chart.Name }}
+    env: {{ .Values.env }}
 spec:
   type: {{ .Values.service.type }}
   selector:
     app: {{ .Chart.Name }}
+    env: {{ .Values.env }}
   ports:
     - name: http
       port: {{ .Values.service.port }}

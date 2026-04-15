@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: "{{ .Chart.Name }}-ingress"
+  name: "{{ .Chart.Name }}-{{ .Values.env }}-ingress"
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
@@ -14,6 +14,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: "{{ .Chart.Name }}-svc"
+                name: "{{ .Chart.Name }}-{{ .Values.env }}-svc"
                 port:
                   number: {{ .Values.service.port }}
