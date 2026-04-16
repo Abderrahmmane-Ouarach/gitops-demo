@@ -1,7 +1,7 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: "{{ .Chart.Name }}-monitor"
+  name: "{{ include \"gitops-demo.fullname\" . }}-monitor"
   namespace: monitoring
   labels:
     release: monitoring
@@ -11,7 +11,7 @@ spec:
       app: {{ .Chart.Name }}
   namespaceSelector:
     matchNames:
-      - default
+      - production
   endpoints:
     - port: http
       path: /metrics
