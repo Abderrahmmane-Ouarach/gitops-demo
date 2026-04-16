@@ -40,12 +40,12 @@ let tasks = [];
 
 
 app.get("/", (req, res) => {
-  res.send("Task Manager API is running");
+  res.send("Task Manager API is running.");
 });
 
 
 app.get("/health", (req, res) => {
-  res.json({ status: "ok",version: "10.0.0" });
+  res.json({ status: "ok",version: "11.0.0" });
 });
 
 app.get("/metrics", async (req, res) => {
