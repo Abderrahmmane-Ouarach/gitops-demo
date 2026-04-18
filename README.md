@@ -57,21 +57,20 @@ Code Push (GitHub)
 
 ---
 
-## 🗂️ Repository Structure
+## 🗂️ Project Structure
 
 ```
-k8s-gitops-pipeline/
-├── .github/
-│   └── workflows/
-│       └── ci.yaml               # Full CI/CD pipeline
-├── argocd/                       # ArgoCD Application manifests
-├── helm/                         # Helm chart
-│   ├── values.staging.yaml       # Staging image tag (auto-updated by CI)
-│   └── values.production.yaml    # Production image tag (auto-updated by CI)
-├── app.js                        # Express app entry point
-├── app.test.js                   # Jest + Supertest test suite
-├── Dockerfile                    # Docker build (node:alpine)
-└── package.json
+gitops-demo/
+├── .github/workflows/       ← CI pipeline (GitHub Actions)
+├── argocd/                  ← ArgoCD Application manifest (CD)
+├── helm/                    ← Helm chart for Kubernetes deployment
+├── .dockerignore
+├── .gitignore
+├── Dockerfile
+├── app.js                   ← Express app (not fetchable but inferable)
+├── app.test.js              ← Jest tests
+├── package.json
+└── package-lock.json
 ```
 
 ---
