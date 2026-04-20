@@ -1,7 +1,7 @@
 replicaCount: 2
 
 image:
-  tag: "53bc560f843c3c09fc7acc1ab8f790943cdd33fd"
+  tag: "a2faab4f39a42453ab28349222d1629be5ed09d6"
 
 ingress:
   host: api.gitops-demo.local
