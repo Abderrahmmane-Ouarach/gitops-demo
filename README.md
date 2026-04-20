@@ -1,4 +1,4 @@
-# k8s-gitops-pipeline
+# GitOps DevSecOps Pipeline
 
 A production-grade GitOps pipeline built with **Node.js/Express**, containerized with **Docker**, deployed on **Kubernetes** via **Helm**, and continuously synced using **ArgoCD** — with a full **GitHub Actions** CI/CD pipeline featuring automated testing, static analysis, and vulnerability scanning.
 
