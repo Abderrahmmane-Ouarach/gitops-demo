@@ -2,9 +2,9 @@
 
 A production-grade GitOps pipeline built with **Node.js/Express**, containerized with **Docker**, deployed on **Kubernetes** via **Helm**, and continuously synced using **ArgoCD** — with a full **GitHub Actions** CI/CD pipeline featuring automated testing, static analysis, and vulnerability scanning.
 
-<img width="1131" height="551" alt="last" src="https://github.com/user-attachments/assets/eaa15b60-29ce-487d-b3c9-0a3d5568bb62" />
 
----
+---<img width="1115" height="532" alt="lassst" src="https://github.com/user-attachments/assets/8b31e9ab-8d1d-492d-8f17-0e8c486269f3" />
+
 
 ## 📐 Architecture Overview
 
