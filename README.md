@@ -214,6 +214,3 @@ Prometheus metrics exposed via `prom-client`:
 
 ---
 
-## 📄 License
-
-ISC
